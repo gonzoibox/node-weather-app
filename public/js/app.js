@@ -6,7 +6,6 @@ const messageTwo = document.querySelector('#message-2');
 messageOne.textContent = 'Loading...';
 messageTwo.textContent = '';
 
-// Aleksandriya
 weatherForm.addEventListener('submit', (e) => {
    e.preventDefault();
 
