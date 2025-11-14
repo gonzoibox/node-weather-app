@@ -12,9 +12,14 @@ const forecast = (latitude, longitude, callback) => {
         } else {
         const description = body.current.weather_descriptions[0].trim();
         const { temperature, feelslike } = body.current;
-    
-        callback(undefined, description + '. It is currently ' + temperature + ' degrees out. It feels like ' + feelslike + ' degrees out.'
-        );
+        const windSpeed = body.current.wind_speed;
+        
+        const messageInfo = `The weather is currently ${description}. 
+        It is currently ${temperature} degrees out. 
+        It feels like ${feelslike} degrees out. 
+        The wind speed is ${windSpeed} km/h.`;
+
+        callback(undefined, messageInfo);
         }
     });
 };
